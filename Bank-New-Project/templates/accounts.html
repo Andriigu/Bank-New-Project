@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Accounts</title>
+</head>
+<body>
+    <h1>Account Management</h1>
+    <form action="/accounts" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <button type="submit">Create Account</button>
+    </form>
+    <h2>Existing Accounts</h2>
+    <ul>
+        {% for account in accounts %}
+        <li>{{ account.customer_name }} ({{ account.email }})</li>
+        {% else %}
+        <li>No accounts found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
